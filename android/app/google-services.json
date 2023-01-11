@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "97744763518",
+    "project_id": "authentication-29067",
+    "storage_bucket": "authentication-29067.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97744763518:android:30c165872cf760a1b5362f",
+        "android_client_info": {
+          "package_name": "com.saturno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97744763518-t7gq1pvhkhfqpno7m3e3r01d0tm4d7mu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saturno",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "97744763518-sn6c6445nmhorq91vcl5k0284kteiui8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQ1cKxf0_FqWFNVauq71-VGjCSOUoZrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97744763518-sn6c6445nmhorq91vcl5k0284kteiui8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

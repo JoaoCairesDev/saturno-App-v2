@@ -1,67 +1,52 @@
-import * as React from 'react';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import HouseFill from 'react-native-bootstrap-icons/icons/house-fill';
-import GearFill from 'react-native-bootstrap-icons/icons/gear-fill';
-import PlusCircleFill from 'react-native-bootstrap-icons/icons/plus-circle-fill';
-
-import HomeScreen from './src/screens/home';
-import SettingsScreen from './src/screens/settings';
-import NewComp from './src/screens/New';
+//Telas Principais
+import Initial from './src/screens/pages/Initial';
+import ViewTask from './src/screens/pages/ViewTask';
+import Chat from './src/screens/pages/Chat';
+import Configs from './src/screens/pages/Configs';
+//Login and Register imports
+import Login from './src/screens/pages/Login';
+import Register from './src/screens/pages/Register';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+//cabeçalho removido com screenOptions
+
+function Home() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        title: '',
+        headerTransparent: true,
+      }}>
+      <Tab.Screen name="Initial" component={Initial} />
+      <Tab.Screen name="ViewTask" component={ViewTask} />
+      <Tab.Screen name="Chat" component={Chat} />
+      <Tab.Screen name="Configs" component={Configs} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
+      <Stack.Navigator
+        initialRouteName="Login"
         screenOptions={{
-          tabBarShowLabel: false,
-          tabBarStyle: {
-            width: '80%',
-            position: 'absolute',
-            bottom: 25,
-            left: 40,
-            right: 30,
-            elevation: 0,
-            borderRadius: 15,
-            height: 60,
-            backgroundColor: '#0f232e',
-            borderTopColor: 'transparent',
-          },
-          tabBarActiveTintColor: '#f56725',
-          tabBarInactiveTintColor: '#fff',
           headerShown: false,
+          title: '',
+          headerTransparent: true,
         }}>
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarIcon: ({size, color}) => (
-              <HouseFill size={size} color={color} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Nova"
-          component={NewComp}
-          options={{
-            tabBarIcon: ({size, color}) => (
-              <PlusCircleFill size={size} color={color} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Settings"
-          component={SettingsScreen}
-          options={{
-            tabBarIcon: ({size, color}) => (
-              <GearFill size={size} color={color} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
