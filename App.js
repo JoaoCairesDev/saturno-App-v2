@@ -11,6 +11,8 @@ import Configs from './src/screens/pages/Configs';
 //Login and Register imports
 import Login from './src/screens/pages/Login';
 import Register from './src/screens/pages/Register';
+//Tasks telas
+import NewTask from './src/screens/pages/NewTask';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -37,7 +39,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Login"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
           title: '',
@@ -46,6 +48,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="NewTask" component={NewTask} />
       </Stack.Navigator>
     </NavigationContainer>
   );

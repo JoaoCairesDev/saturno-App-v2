@@ -28,7 +28,7 @@ export default function Login({navigation}) {
       .then(userCredential => {
         let user = userCredential.user;
         navigation.navigate('Home');
-        console.log(user);
+
         // ...
       })
       .catch(error => {
