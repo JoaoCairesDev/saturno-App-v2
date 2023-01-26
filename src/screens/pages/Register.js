@@ -26,7 +26,6 @@ export default function Register({navigation}) {
       .createUserWithEmailAndPassword(email, Password)
       .then(userCredential => {
         let user = userCredential.user;
-        console.log(user);
         navigation.navigate('Home');
       })
       .catch(error => {
